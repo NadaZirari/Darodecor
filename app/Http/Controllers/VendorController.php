@@ -19,14 +19,12 @@ class VendorController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:vendors,email',
-            'phone' => 'nullable|string|max:20',
             'description' => 'nullable|string',
         ]);
 
         Vendor::create([
             'name' => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone,
             'description' => $request->description,
             'user_id' => Auth::id(),
         ]);
