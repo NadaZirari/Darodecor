@@ -27,6 +27,14 @@ Route::post('/login', function (Request $request) {
     }
 });
 
+Route::prefix('products')->group(function () {
+    Route::get('/', [ProductController::class, 'index']);         // Lire tous les produits
+    Route::post('/', [ProductController::class, 'store']);         // Créer un produit
+    Route::get('{id}', [ProductController::class, 'show']);        // Lire un seul produit
+    Route::put('{id}', [ProductController::class, 'update']);      // Mettre à jour un produit
+    Route::delete('{id}', [ProductController::class, 'destroy']);  // Supprimer un produit
+});
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('vendors', VendorController::class);
     Route::apiResource('products', ProductController::class);
