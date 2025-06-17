@@ -36,6 +36,6 @@ Route::prefix('products')->group(function () {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('vendors', VendorController::class);
-    Route::apiResource('products', ProductController::class);
+    Route::apiResource('vendors', VendorController::class);                  
+    Route::apiResource('products', ProductController::class);                
 });
