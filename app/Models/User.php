@@ -18,9 +18,15 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+         'first_name',
+        'last_name',
+        'username',
+
         'email',
         'password',
+        'super_user',
+        'manage_supers',
+        'permissions',
     ];
 
     /**
@@ -43,6 +49,17 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+             'super_user' => 'boolean',
+            'manage_supers' => 'boolean',
         ];
+    }
+     public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

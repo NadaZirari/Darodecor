@@ -20,6 +20,53 @@ return [
         'logout_success' => 'Logout successfully!',
         'dont_have_account' => 'You don\'t have account on this system, please contact administrator for more information!',
     ],
+
+
+
+    'register' => [
+        'title' => 'User Registration',
+        'first_name' => 'First Name',
+        'last_name' => 'Last Name',
+        'username' => 'Username',
+        'email' => 'Email',
+        'password' => 'Password',
+        'password_confirmation' => 'Confirm Password',
+        'register' => 'Register',
+        'placeholder' => [
+            'first_name' => 'Enter your first name',
+            'last_name' => 'Enter your last name',
+            'username' => 'Enter your username',
+            'email' => 'Enter your email address',
+            'password' => 'Enter your password',
+            'password_confirmation' => 'Confirm your password',
+        ],
+        'success' => 'Registration successful!',
+        'fail' => 'Registration failed. Please try again.',
+        'email_exist' => 'This email address is already registered.',
+        'username_exist' => 'This username is already taken.',
+        'validation' => [
+            'first_name_required' => 'First name is required.',
+            'last_name_required' => 'Last name is required.',
+            'email_required' => 'Email address is required.',
+            'email_valid' => 'Please enter a valid email address.',
+            'password_required' => 'Password is required.',
+            'password_min' => 'Password must be at least 6 characters.',
+            'password_confirmed' => 'Password confirmation does not match.',
+        ],
+        'terms' => [
+            'agree' => 'I agree to the',
+            'terms_conditions' => 'Terms and Conditions',
+            'privacy_policy' => 'Privacy Policy',
+            'required' => 'You must agree to the terms and conditions.',
+        ],
+        'already_have_account' => 'Already have an account?',
+        'login_here' => 'Login here',
+    ],
+
+
+
+    
+
     'forgot_password' => [
         'title' => 'Forgot Password',
         'message' => '<p>Have you forgotten your password?</p><p>Please enter your email account. System will send a email with active link to reset your password.</p>',

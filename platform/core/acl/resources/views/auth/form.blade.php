@@ -34,6 +34,20 @@
     {!! Form::close() !!}
 @endif
 
+@if (request()->routeIs('access.login'))
+    <div class="text-center mt-3">
+        <p>{{ trans('acl/auth.not_member') }} 
+           <a href="{{ route('access.register') }}">{{ trans('acl/auth.register_now') }}</a>
+        </p>
+    </div>
+@elseif (request()->routeIs('access.register'))
+    <div class="text-center mt-3">
+        <p>{{ trans('acl/auth.register.already_have_account') }} 
+           <a href="{{ route('access.login') }}">{{ trans('acl/auth.register.login_here') }}</a>
+        </p>
+    </div>
+@endif
+
 @yield('form_end')
 @endsection
 
