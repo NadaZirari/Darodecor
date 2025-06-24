@@ -4,6 +4,8 @@ namespace Botble\ACL\Forms\Auth;
 
 use Botble\ACL\Http\Requests\RegisterRequest;
 use Botble\ACL\Models\User;
+use Botble\ACL\Http\Controllers\Auth\RegisterController;
+
 use Botble\Base\Forms\FieldOptions\CheckboxFieldOption;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
 use Botble\Base\Forms\FieldOptions\TextFieldOption;

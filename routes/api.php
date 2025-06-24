@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Botble\ACL\Http\Controllers\Auth\RegisterController;
+
 
 use Illuminate\Validation\ValidationException;
 

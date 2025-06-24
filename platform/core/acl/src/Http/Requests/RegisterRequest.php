@@ -1,6 +1,7 @@
 <?php
 
 namespace Botble\ACL\Http\Requests;
+use Botble\ACL\Http\Controllers\Auth\RegisterController;
 
 use Botble\Support\Http\Requests\Request;
 
