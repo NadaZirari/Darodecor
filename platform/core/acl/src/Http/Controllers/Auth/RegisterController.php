@@ -1,7 +1,7 @@
 <?php
 
 namespace Botble\ACL\Http\Controllers\Auth;
-
+use Botble\ACL\Forms\Auth\RegisterForm;
 use Botble\ACL\Http\Controllers\Controller;
 use Botble\ACL\Models\User;
 use Botble\ACL\Models\Role;
@@ -36,8 +36,9 @@ class RegisterController extends Controller
     {
         page_title()->setTitle(trans('acl/auth.register.title'));
 
-        return view('core/acl::auth.register');
-    }
+  $form = RegisterForm::create();
+    
+    return $form->renderForm();    }
 
 
       public function register(Request $request)
@@ -104,7 +105,7 @@ class RegisterController extends Controller
 
        protected function registered(Request $request, $user)
     {
-        return redirect()->route('dashboard.index')
-            ->with('success_msg', trans('acl/auth.register.welcome', ['name' => $user->first_name]));
+         return redirect('/admin')
+        ->with('success_msg', trans('acl/auth.register.welcome', ['name' => $user->first_name]));
     }
 }
