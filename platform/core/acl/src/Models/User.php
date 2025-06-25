@@ -56,6 +56,10 @@ class User extends BaseModel implements
         'password',
         'avatar_id',
         'permissions',
+          'super_user',       
+    'manage_supers',
+ 'email_verified_at',  
+   'last_login', 
     ];
 
     protected $hidden = [
@@ -114,11 +118,16 @@ class User extends BaseModel implements
         );
     }
 
-    protected function activated(): Attribute
-    {
-        return Attribute::get(fn (): bool => $this->activations()->where('completed', true)->exists());
-    }
-
+   protected function activated(): Attribute
+{
+    return Attribute::get(function (): bool {
+        if ($this->email_verified_at) {
+            return true;
+        }
+        
+        return $this->activations()->where('completed', true)->exists();
+    });
+}
     protected function avatarUrl(): Attribute
     {
         return Attribute::get(function () {
